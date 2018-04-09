@@ -2,7 +2,6 @@
 Human Brain:
 ![](images/Fig1.jpeg)
 
-                      Fig 1: Different regions of a human brain [1]
 
 •	The human brain is the command center for the human nervous system
 •	It receives input from the sensory organs and sends output to the muscles
@@ -101,3 +100,155 @@ Signal acquisition:
 ![](images/Fig6.jpg)
 
               Fig 6: 10/20 Electrode Position System [5]
+
+•	The 10/20 system is an internationally accepted method to describe the location of  
+   scalp electrodes.
+•	The numbers ‘10’ and ’20’ refer to the distance between adjacent electrodes which  
+   are either 10% or 20% of the total nasion-inion distance or the right pre-auricular  
+   (right ear lobe) to left pre-auricular (left ear lobe) distance.
+   
+•	Nasion -> The point between the forehead and the nose.
+  Inion -> The lowest point of the skull from the back of the head, normally indicated    
+  by a prominent bump.
+  Pre-auricular points -> Anterior to the left and right ear.   
+  
+•	The electrode positions are denoted by letters and a number. Letters to identify               
+   the lobe and the number to identify the hemisphere location.
+   
+Electrode 	Lobe
+F   	      Frontal
+T	          Temporal
+P	          Parietal
+O   	      Occipital
+C – Used for identification purpose of central scalp position.
+z – Refer to an electrode placed on the mid line.
+Even numbers (2, 4, 6, 8) refer to electrode positions on the right hemisphere.
+Odd numbers (1, 3, 5, 7) refer to electrode positions on the left hemisphere.
+
+Signal amplification:
+
+•	The acquired EEG signals are of 10-100 microvolt range, which are very weak to 
+  detect and process for the A/D converter. Therefore it has to be massively amplified. 
+  The amplifier comprises of Instrumentation amplifier, Band-pass Filter, 50 Hz Notch 
+  Filter, Successive gain stages and power supply circuitry.
+  
+  ![](images/Fig7.jpg)
+  
+                                            Fig 7: Signal amplification stages 
+
+•	Instrumentation amplifier, amplifies the difference between the signals obtained from 
+   the scalp locations through the signal channel and reference channel. It is a high 
+   quality differential amplifier (gain factor 200) and its Common Mode Rejection Ratio  
+   (CMRR) is set to be high.
+   
+•	Band pass filter is a combination of a High-pass Filter (cut-off frequency of 1 Hz) 
+   and a Low-Pass Filter (cut-off frequency of 35 Hz). LPF is used to minimize the 
+   distortion and restricting the frequency band of interest to generate SSVEP signals 
+   i.e. 1-35 Hz. The HPF is used to remove the DC offset.
+   
+•	50 Hz Notch Filter is used to reject the 50 Hz noise from the acquired signal in order 
+   to improve the quality of the signal.
+   
+•	There are three gain stages. First is the Instrumentation amplifier, second is the 
+   variable (gain factor 0 to 255) gain stage and the third stage is of fixed gain (gain 
+   factor 12) stage.
+   
+Signal processing:
+
+•	The method which is used to process the amplified EEG signals from the Bio-
+   amplifier is called Digital Matched Filtering (DMF).
+   
+•	The steps involved in this method is shown (Fig: 9) with a block diagram below.
+
+•	To elicit SSVEP signal external stimuli are required. Therefore a stimulus box has 
+   been designed using 4 LEDs flickering at different frequencies (anywhere between 
+   10 to 18 Hz). These 4 frequencies are subject dependent and identified prior to 
+   conducting the experiment. Each frequency is mapped to some action. 
+   
+   ![](images/Fig8.jpg)
+   
+                                                      Fig 8: Stimuli box
+                                                      
+   •	In DMF method, at first the look up tables for sine and cosine waves of 4 different 
+   frequencies are generated.
+
+![](images/Fig9.jpg)
+
+                                        Fig 9: Digital Match Filtering Procedure [6]
+
+•	The incoming EEG signals are digitized by using A/D converter of Arduino and used 
+   further for processing.
+   
+•	The degree of correlation between the incoming EEG signals (at frequency of LED 
+   flickering) and the same frequency sine (and cosine) waves is checked.
+   
+•	The frequency corresponding to the highest correlation value is the intended 
+   frequency has been elicited by the user. 
+   
+•	The subject would gaze at the intended LED until the desired action has been  
+   performed. The detection time is subject dependent and varies depending on the level 
+   of training that the subject has undergone prior to the experiment.
+
+SSVEP Frequency Spectrum Plot:
+
+•	The SSVEP frequency spectrum can be shown by FFT plot.
+
+•	From the FFT plot the Signal to Noise ratio (SNR) can be computed. In the present 
+   context SNR refers to the ratio of useful information (signal) to false or irrelevant  
+   data (noise). Higher the value of SNR, the more is the desired signal present in the 
+   spectrum.
+
+![](images/Fig10.jpg)
+
+                             Fig 10: Frequency spectrum of SSVEP signal of 15 Hz acquired from   Subject [7]
+                             
+Different modes of SSVEP BCI system:
+
+The developed BCI system for SSVEP of RRI comprises of different modes of operation e.g. i) Mode 1-> Frequency Calibration, ii) Mode 2-> SSVEP Training, iii) Mode 3->SSVEP protocol
+
+i)	Frequency Calibration: 
+It is about finding out best 4 frequencies in 12-30 Hz band prior to conduct the experiment. These 4 frequencies are used for the action selection.
+
+ii)	SSVEP Training: 
+It is about training with defined protocol with best frequencies. This defines the sequence of 4 actions performed on the flickering of 4 LEDs. In this mode user is trained about at what sequence user has to concentrate on each LED to perform each action by robotic arm, when all are flickering simultaneously.
+
+iii)	SSVEP protocol: 
+It is about giving commands to robotic arm as per defined protocol. For example when user has focused on LED corresponding to 1st action the arm goes down to grab and pick an object, in 2nd action the arm moves left from the starting position, goes down to place the object at the final position and so on. Finally at the end of the 4th action it comes back to its starting position.
+
+![](images/Fig11.jpg)
+
+                                              Fig 11: Sequence of actions for SSVEP 
+                                              
+My Role:
+
+I am involved in the coding part for the EEG signal processing as well as robotic arm coding using Arduino IDE. For the display of ongoing frequency, trials and EEG plot a GLCD display has been used. I am involved in the coding of it as well. I have debugged the mode 1 part, where there was an issue with displaying frequency and corresponding trials. At present I am working with the robotic arm to precisely control its position and speed. I am using servo motor shield for this purpose and for the over current protection of the motors as well. When the arm is used with load, backlash is noticed. Therefore I am implementing PID algorithm on it to remove the backlash error.
+Actuating device:
+
+•	The actuating device used in this lab is a robotic arm.
+
+•	The arm has 3 degrees of freedom. It can rotate on its base, shoulder and wrist joints.
+
+![](images/Fig12.jpg)
+
+        Fig 12: Robotic arm [8]  
+        
+•	4 RC servo motors has been used for movement of base, shoulder, wrist and end- 
+   effector respectively.
+   
+•	The sequence of actions for the arm has been programmed in Arduino.
+
+•	The arm performs the actions when it gets signals from the processing board via 
+   Bluetooth module which has a range of 10 meters.
+ 
+Reference:        
+[1] https://straitsmoslem.com/2018/02/13/bagaimana-alquran-membentuk-otak/
+
+[2] - [4] Brain Computer Interface laboratory, Raman Research Institute, Bangalore
+
+[5] https://g-se.com/el-biofeedback-y-neurofeedback-como-estrategias-de-     recuperacion-fisica-y-mejoramiento-del-sueno-y-rendimiento-en-deportistas-bp-d57cfb26dea6de 
+
+[6] - [7] Brain Computer Interface laboratory, Raman Research Institute, Bangalore
+
+[8] http://www.instructables.com/id/Arduino-Robot-Arm/
+
+        
