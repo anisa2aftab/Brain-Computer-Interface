@@ -4,10 +4,10 @@
 
                               Fig 1: Different regions of a human brain [1]
 
-•	The human brain is the command center for the human nervous system
-•	It receives input from the sensory organs and sends output to the muscles
-•	It contains billions of nerve fibers (axons and dendrites)
-•	These neurons are connected by trillions of connections, or synapses
+* The human brain is the command center for the human nervous system
+* It receives input from the sensory organs and sends output to the muscles
+* It contains billions of nerve fibers (axons and dendrites)
+* These neurons are connected by trillions of connections, or synapses
 
 Motivation:
 
