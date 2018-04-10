@@ -1,5 +1,5 @@
 # Brain-Computer-Interface (BCI)
-# Human Brain:
+## Human Brain:
 ![](images/Fig1.jpeg)
 
                               Fig 1: Different regions of a human brain [1]
