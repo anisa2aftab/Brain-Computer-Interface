@@ -1,5 +1,5 @@
 # Brain-Computer-Interface (BCI)
-## Human Brain:
+#### Human Brain:
 ![](images/Fig1.jpeg)
 
                               Fig 1: Different regions of a human brain [1]
@@ -9,7 +9,7 @@
 * It contains billions of nerve fibers (axons and dendrites)
 * These neurons are connected by trillions of connections, or synapses
 
-Motivation:
+#### Motivation:
 
 •	In a paraplegic patient, the nerves connecting the lower parts of the body are damaged as 
    a result they are unable to move. And in the case of a tetraplegic patient, the spinal nerves   
@@ -23,12 +23,12 @@ Motivation:
    challenged persons.   
 •	This forms a bridge between my interest and the research of this lab.
 
-Brain Computer Interface (BCI) System:
+### Brain Computer Interface (BCI) System:
 ![](images/Fig2.jpg)
             
                                             Fig 2: BCI System (SSVEP) Block Diagram
                                             
-Objective:
+#### Objective:
 
 •	Brain-computer interface (BCI) system is an interface between a brain and a device 
   which enables signals from the brain to direct some external activity, like, control of 
@@ -46,7 +46,7 @@ Objective:
   on selective attention. This requires an external visual stimuli for the user in order to 
   generate the Brain patterns called Steady State Visually Evoked Potential (SSVEP).
 
-Steady State Visually Evoked Potentials (SSVEP):
+#### Steady State Visually Evoked Potentials (SSVEP):
 
 •	When the visual stimulus is viewed by a user, the flickering light rays fall on the retina 
    of the eye which is then converted into electrical signals and transmitted to the occipital 
@@ -67,7 +67,7 @@ Steady State Visually Evoked Potentials (SSVEP):
    amplification, Signal processing (Feature extraction and Translation) and sending  
    command to the actuating devices.
 
-Signal acquisition:
+#### Signal acquisition:
 
 •	This is the first and foremost stage of a BCI system. To acquire good EEG data proper 
   positioning of electrodes is very important.    
@@ -96,7 +96,7 @@ Signal acquisition:
  
                                          Fig 5: Raw EEG plot [4]
 
-10/20 Electrode Position System:
+### 10/20 Electrode Position System:
 
 ![](images/Fig6.jpg)
 
@@ -126,7 +126,7 @@ z – Refer to an electrode placed on the mid line.
 Even numbers (2, 4, 6, 8) refer to electrode positions on the right hemisphere.
 Odd numbers (1, 3, 5, 7) refer to electrode positions on the left hemisphere.
 
-Signal amplification:
+#### Signal amplification:
 
 •	The acquired EEG signals are of 10-100 microvolt range, which are very weak to 
   detect and process for the A/D converter. Therefore it has to be massively amplified. 
@@ -154,7 +154,7 @@ Signal amplification:
    variable (gain factor 0 to 255) gain stage and the third stage is of fixed gain (gain 
    factor 12) stage.
    
-Signal processing:
+#### Signal processing:
 
 •	The method which is used to process the amplified EEG signals from the Bio-
    amplifier is called Digital Matched Filtering (DMF).
@@ -190,7 +190,7 @@ Signal processing:
    performed. The detection time is subject dependent and varies depending on the level 
    of training that the subject has undergone prior to the experiment.
 
-SSVEP Frequency Spectrum Plot:
+#### SSVEP Frequency Spectrum Plot:
 
 •	The SSVEP frequency spectrum can be shown by FFT plot.
 
@@ -203,7 +203,7 @@ SSVEP Frequency Spectrum Plot:
 
                              Fig 10: Frequency spectrum of SSVEP signal of 15 Hz acquired from   Subject [7]
                              
-Different modes of SSVEP BCI system:
+#### Different modes of SSVEP BCI system:
 
 The developed BCI system for SSVEP of RRI comprises of different modes of operation e.g. i) Mode 1-> Frequency Calibration, ii) Mode 2-> SSVEP Training, iii) Mode 3->SSVEP protocol
 
@@ -220,10 +220,10 @@ It is about giving commands to robotic arm as per defined protocol. For example 
 
                                               Fig 11: Sequence of actions for SSVEP 
                                               
-My Role:
+#### My Role:
 
 I am involved in the coding part for the EEG signal processing as well as robotic arm coding using Arduino IDE. For the display of ongoing frequency, trials and EEG plot a GLCD display has been used. I am involved in the coding of it as well. I have debugged the mode 1 part, where there was an issue with displaying frequency and corresponding trials. At present I am working with the robotic arm to precisely control its position and speed. I am using servo motor shield for this purpose and for the over current protection of the motors as well. When the arm is used with load, backlash is noticed. Therefore I am implementing PID algorithm on it to remove the backlash error.
-Actuating device:
+#### Actuating device:
 
 •	The actuating device used in this lab is a robotic arm.
 
@@ -241,7 +241,7 @@ Actuating device:
 •	The arm performs the actions when it gets signals from the processing board via 
    Bluetooth module which has a range of 10 meters.
  
-Reference:        
+#### Reference:        
 [1] https://straitsmoslem.com/2018/02/13/bagaimana-alquran-membentuk-otak/
 
 [2] - [4] Brain Computer Interface laboratory, Raman Research Institute, Bangalore
