@@ -79,83 +79,53 @@
   Pre-auricular points -> Anterior to the left and right ear.   
 * The electrode positions are denoted by letters and a number. Letters to identify the lobe and the number to identify the hemisphere     location.   
 ![](Brain_regions.jpg)
+
 C – Used for identification purpose of central scalp position.
+
 z – Refer to an electrode placed on the mid line.
+
 Even numbers (2, 4, 6, 8) refer to electrode positions on the right hemisphere.
+
 Odd numbers (1, 3, 5, 7) refer to electrode positions on the left hemisphere.
 
 #### Signal amplification:
 
-* The acquired EEG signals are of 10-100 microvolt range, which are very weak to 
-  detect and process for the A/D converter. Therefore it has to be massively amplified. 
-  The amplifier comprises of Instrumentation amplifier, Band-pass Filter, 50 Hz Notch 
-  Filter, Successive gain stages and power supply circuitry.
+* The acquired EEG signals are of 10-100 microvolt range, which are very weak to detect and process for the A/D converter. Therefore it   has to be massively amplified. The amplifier comprises of Instrumentation amplifier, Band-pass Filter, 50 Hz Notch Filter, Successive   gain stages and power supply circuitry.
   
   ![](images/Fig7.jpg)
   
                                             Fig 7: Signal amplification stages 
 
-* Instrumentation amplifier, amplifies the difference between the signals obtained from 
-   the scalp locations through the signal channel and reference channel. It is a high 
-   quality differential amplifier (gain factor 200) and its Common Mode Rejection Ratio  
-   (CMRR) is set to be high.
-   
-* Band pass filter is a combination of a High-pass Filter (cut-off frequency of 1 Hz) 
-   and a Low-Pass Filter (cut-off frequency of 35 Hz). LPF is used to minimize the 
-   distortion and restricting the frequency band of interest to generate SSVEP signals 
-   i.e. 1-35 Hz. The HPF is used to remove the DC offset.
-   
-* 50 Hz Notch Filter is used to reject the 50 Hz noise from the acquired signal in order 
-   to improve the quality of the signal.
-   
-* There are three gain stages. First is the Instrumentation amplifier, second is the 
-   variable (gain factor 0 to 255) gain stage and the third stage is of fixed gain (gain 
-   factor 12) stage.
+* Instrumentation amplifier, amplifies the difference between the signals obtained from the scalp locations through the signal channel     and reference channel. It is a high quality differential amplifier (gain factor 200) and its Common Mode Rejection Ratio (CMRR) is set   to be high.
+* Band pass filter is a combination of a High-pass Filter (cut-off frequency of 1 Hz) and a Low-Pass Filter (cut-off frequency of 35       Hz). LPF is used to minimize the distortion and restricting the frequency band of interest to generate SSVEP signals i.e. 1-35 Hz. The   HPF is used to remove the DC offset.
+* 50 Hz Notch Filter is used to reject the 50 Hz noise from the acquired signal in order to improve the quality of the signal.
+* There are three gain stages. First is the Instrumentation amplifier, second is the variable (gain factor 0 to 255) gain stage and the   third stage is of fixed gain (gain factor 12) stage.
    
 #### Signal processing:
 
-* The method which is used to process the amplified EEG signals from the Bio-
-   amplifier is called Digital Matched Filtering (DMF).
-   
+* The method which is used to process the amplified EEG signals from the Bio-amplifier is called Digital Matched Filtering (DMF).
 * The steps involved in this method is shown (Fig: 9) with a block diagram below.
-
-* To elicit SSVEP signal external stimuli are required. Therefore a stimulus box has 
-   been designed using 4 LEDs flickering at different frequencies (anywhere between 
-   10 to 18 Hz). These 4 frequencies are subject dependent and identified prior to 
-   conducting the experiment. Each frequency is mapped to some action. 
+* To elicit SSVEP signal external stimuli are required. Therefore a stimulus box has been designed using 4 LEDs flickering at different   frequencies (anywhere between 10 to 18 Hz). These 4 frequencies are subject dependent and identified prior to conducting the             experiment. Each frequency is mapped to some action. 
    
    ![](images/Fig8.jpg)
                                                         
                                                         Fig 8: Stimuli box
                                                       
-   * In DMF method, at first the look up tables for sine and cosine waves of 4 different 
-   frequencies are generated.
+   * In DMF method, at first the look up tables for sine and cosine waves of 4 different frequencies are generated.
 
 ![](images/Fig9.jpg)
 
                                         Fig 9: Digital Match Filtering Procedure [6]
 
-* The incoming EEG signals are digitized by using A/D converter of Arduino and used 
-   further for processing.
-   
-* The degree of correlation between the incoming EEG signals (at frequency of LED 
-   flickering) and the same frequency sine (and cosine) waves is checked.
-   
-* The frequency corresponding to the highest correlation value is the intended 
-   frequency has been elicited by the user. 
-   
-* The subject would gaze at the intended LED until the desired action has been  
-   performed. The detection time is subject dependent and varies depending on the level 
-   of training that the subject has undergone prior to the experiment.
+* The incoming EEG signals are digitized by using A/D converter of Arduino and used further for processing.
+* The degree of correlation between the incoming EEG signals (at frequency of LED flickering) and the same frequency sine (and cosine)     waves is checked.
+* The frequency corresponding to the highest correlation value is the intended frequency has been elicited by the user. 
+* The subject would gaze at the intended LED until the desired action has been performed. The detection time is subject dependent and     varies depending on the level of training that the subject has undergone prior to the experiment.
 
 #### SSVEP Frequency Spectrum Plot:
 
 * The SSVEP frequency spectrum can be shown by FFT plot.
-
-* From the FFT plot the Signal to Noise ratio (SNR) can be computed. In the present 
-   context SNR refers to the ratio of useful information (signal) to false or irrelevant  
-   data (noise). Higher the value of SNR, the more is the desired signal present in the 
-   spectrum.
+* From the FFT plot the Signal to Noise ratio (SNR) can be computed. In the present context SNR refers to the ratio of useful             information (signal) to false or irrelevant data (noise). Higher the value of SNR, the more is the desired signal present in the         spectrum.
 
 ![](images/Fig10.jpg)
 
@@ -191,20 +161,18 @@ I am involved in the coding part for the EEG signal processing as well as roboti
 
         Fig 12: Robotic arm [8]  
         
-* 4 RC servo motors has been used for movement of base, shoulder, wrist and end- 
-   effector respectively.
+* 4 RC servo motors has been used for movement of base, shoulder, wrist and end-effector respectively.
    
 * The sequence of actions for the arm has been programmed in Arduino.
 
-* The arm performs the actions when it gets signals from the processing board via 
-   Bluetooth module which has a range of 10 meters.
+* The arm performs the actions when it gets signals from the processing board via Bluetooth module which has a range of 10 meters.
  
 #### Reference:        
 [1] https://straitsmoslem.com/2018/02/13/bagaimana-alquran-membentuk-otak/
 
 [2] - [4] Brain Computer Interface laboratory, Raman Research Institute, Bangalore
 
-[5] https://g-se.com/el-biofeedback-y-neurofeedback-como-estrategias-de-     recuperacion-fisica-y-mejoramiento-del-sueno-y-rendimiento-en-deportistas-bp-d57cfb26dea6de 
+[5] https://g-se.com/el-biofeedback-y-neurofeedback-como-estrategias-de-recuperacion-fisica-y-mejoramiento-del-sueno-y-rendimiento-en-deportistas-bp-d57cfb26dea6de 
 
 [6] - [7] Brain Computer Interface laboratory, Raman Research Institute, Bangalore
 
