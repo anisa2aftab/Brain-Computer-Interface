@@ -2,7 +2,7 @@
 #### Human Brain:
 ![](images/Fig1.jpeg)
 
-                              Fig 1: Different regions of a human brain [1]
+##### Fig 1: Different regions of a human brain [1]
 
 * The human brain is the command center for the human nervous system
 * It receives input from the sensory organs and sends output to the muscles
