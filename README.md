@@ -77,10 +77,8 @@
 * Nasion -> The point between the forehead and the nose.
   Inion -> The lowest point of the skull from the back of the head, normally indicated by a prominent bump.
   Pre-auricular points -> Anterior to the left and right ear.   
-* The electrode positions are denoted by letters and a number. Letters to identify the lobe and the number to identify the hemisphere     location.
-   
+* The electrode positions are denoted by letters and a number. Letters to identify the lobe and the number to identify the hemisphere     location.   
 ![](Brain_regions.jpg)
-
 C – Used for identification purpose of central scalp position.
 z – Refer to an electrode placed on the mid line.
 Even numbers (2, 4, 6, 8) refer to electrode positions on the right hemisphere.
