@@ -1,4 +1,4 @@
-# Brain-Computer-Interface (BCI)
+# Brain-Computer-Interface (BCI) by SSVEP
 #### Human Brain:
 ![](images/Fig1.jpeg)
 
